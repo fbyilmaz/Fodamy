@@ -2,6 +2,9 @@
     <string name="app_name">Fodamy</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Intro Screen -->
     <string name="screen_intro1_title">Welcome to Fodamy Network!</string>
     <string name="screen_intro1_desc">Fodamy is the best place to find your favorite recipes in all around the word.</string>
     <string name="screen_intro2_title">Finding recipes were not that easy.</string>
