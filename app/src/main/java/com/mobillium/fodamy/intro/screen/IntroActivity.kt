@@ -1,4 +1,4 @@
-package com.mobillium.fodamy.intro.ui
+package com.mobillium.fodamy.intro.screen
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
