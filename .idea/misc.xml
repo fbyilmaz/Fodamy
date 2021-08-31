@@ -4,8 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/drawable/ic_bullets.xml" value="0.24177631578947367" />
+        <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/activity_auth.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/activity_intro.xml" value="0.5" />
         <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/activity_main.xml" value="0.22269736842105264" />
+        <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/fragment_forgot_password.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/fragment_login.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/fragment_register.xml" value="0.23157894736842105" />
         <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/intro_layout.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/item_intro_layout.xml" value="0.23157894736842105" />
         <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/login_layout.xml" value="0.25" />
         <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/password_layout.xml" value="0.23157894736842105" />
         <entry key="..\:/Users/FBY/AndroidStudioProjects/Fodamy3/app/src/main/res/layout/register_layout.xml" value="0.25" />

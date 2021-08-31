@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Fodamy</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
@@ -13,10 +13,16 @@
     <string name="screen_intro3_desc">Fodamy is the best place to find your favorite recipes in all around the word.</string>
     <string name="screen_intro4_title">Share recipes with others.</string>
     <string name="screen_intro4_desc">Fodamy is the best place to find your favorite recipes in all around the word.</string>
+    <string name="screen_intro_next">Sıradaki</string>
     <string name="screen_register_title">Üye Ol</string>
     <string name="screen_register_bottom">Hesabın mı var? Giriş Yap</string>
     <string name="screen_login_title">Giriş Yap</string>
     <string name="screen_login_bottom">Hesabın mı Yok? Üye Ol</string>
+    <string name="screen_login_forgotpassword">Şifrenizi mi unuttunuz?</string>
     <string name="screen_change_pass_title">Şifre Sıfırlama</string>
     <string name="screen_change_pass_button">Sıfırla</string>
+    <string name="screen_register_mail">E-Mail Adresi</string>
+    <string name="screen_register_nickname">Kullanıcı Adı</string>
+    <string name="screen_register_password">Şifre</string>
+
 </resources>

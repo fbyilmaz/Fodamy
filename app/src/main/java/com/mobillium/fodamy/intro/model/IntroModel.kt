@@ -17,8 +17,8 @@ enum class IntroModel(
     @DrawableRes val image: Int
 ) {
     //TODO Aşağıdaki intro ekranları için text ve drawable dosyaları setlenecek.
-    INTRO_1(R.string.screen_intro1_title, R.string.screen_intro1_desc, R.drawable.ic_temp),
-    INTRO_2(R.string.screen_intro2_title, R.string.screen_intro1_desc, R.drawable.ic_temp),
-    INTRO_3(R.string.screen_intro3_title, R.string.screen_intro1_desc, R.drawable.ic_temp),
-    INTRO_4(R.string.screen_intro4_title, R.string.screen_intro1_desc, R.drawable.ic_temp)
+    INTRO_1(R.string.screen_intro1_title, R.string.screen_intro1_desc, R.drawable.walkthrough_image1),
+    INTRO_2(R.string.screen_intro2_title, R.string.screen_intro1_desc, R.drawable.walkthrough_image2),
+    INTRO_3(R.string.screen_intro3_title, R.string.screen_intro1_desc, R.drawable.walkthrough_image3),
+    INTRO_4(R.string.screen_intro4_title, R.string.screen_intro1_desc, R.drawable.walkthrough_image4)
 }

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
+    <!-- font size -->
     <dimen name="font_text_xsmall">11sp</dimen>
     <dimen name="font_text_small">12sp</dimen>
     <dimen name="font_text_medium">13sp</dimen>
     <dimen name="font_text_large">14sp</dimen>
     <dimen name="font_text_xlarge">15sp</dimen>
     <dimen name="font_text_xxlarge">16sp</dimen>
+    <!-- margin size -->
+    <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_xlarge">64dp</dimen>
+    <dimen name="margin_xxlarge">128dp</dimen>
 </resources>

@@ -14,13 +14,14 @@ class LoginFragment : Fragment() {
 
     // TODO Binding kullanılacak. fragment_login.xml ve buradaki değişiklikler yapılmalı.
 
-    // TODO fragment_login.xml tasarımı tamamlanacak. Örnek olarak email için alan eklendi.
+    //  fragment_login.xml tasarımı tamamlanacak. Örnek olarak email için alan eklendi.
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
+
 
 
         val nameEditText = view.findViewById<TextInputEditText>(R.id.editTextEmail)

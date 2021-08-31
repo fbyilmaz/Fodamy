@@ -1,19 +1,24 @@
 package com.mobillium.fodamy.auth
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.mobillium.fodamy.R
+import com.mobillium.fodamy.databinding.ActivityAuthBinding
 
 /**
  * Bu activity'yi Login, Register ve ilişkili ekranları kontrol etmek için kullanacağız.
  * Her bir ekran fragment olarak tasarlanacak.
  */
 class AuthActivity : AppCompatActivity() {
+    lateinit var binding : ActivityAuthBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+        binding = DataBindingUtil.setContentView(
+            this, R.layout.activity_auth)
 
-        openLoginFragment()
+            openRegisterFragment()
+
 
     }
 
@@ -30,7 +35,19 @@ class AuthActivity : AppCompatActivity() {
     // TODO 3 tane benzer yapıda openXXXFragment() fonksiyonu oldu. Bunu tek fonksiyonda halledebilir miyiz?
     fun openLoginFragment() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainer, LoginFragment())
+            .add(R.id.fragment_container, LoginFragment())
+            .commit()
+    }
+
+    fun openRegisterFragment() {
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_container, RegisterFragment())
+            .commit()
+    }
+
+    fun openForgotPasswordFragment() {
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_container, ForgotPasswordFragment())
             .commit()
     }
 }

@@ -31,7 +31,7 @@ android {
         jvmTarget = '1.8'
     }
 
-    //TODO Databinding nedir? Nerede nasıl kullanıyoruz?
+    // Databinding nedir? Nerede nasıl kullanıyoruz?
     buildFeatures {
         dataBinding true
     }

@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mobillium.fodamy.databinding.ItemIntroLayoutBinding
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.mobillium.fodamy.intro.model.IntroModel
+
 
 
 class IntroPagerAdapter(private val introModelsList: Array<IntroModel> = IntroModel.values()):
