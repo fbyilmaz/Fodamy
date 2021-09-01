@@ -1,6 +1,7 @@
 package com.mobillium.fodamy.auth
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.mobillium.fodamy.R
@@ -17,7 +18,8 @@ class AuthActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(
             this, R.layout.activity_auth)
 
-            openRegisterFragment()
+        Log.d("Fatih","AuthActivity onCreate")
+        openLoginFragment()
 
 
     }

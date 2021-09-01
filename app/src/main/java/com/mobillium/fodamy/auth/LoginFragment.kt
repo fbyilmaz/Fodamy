@@ -1,16 +1,16 @@
 package com.mobillium.fodamy.auth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
-import com.google.android.material.textfield.TextInputEditText
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.mobillium.fodamy.R
+import com.mobillium.fodamy.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
+    private lateinit var binding: FragmentLoginBinding
 
     // TODO Binding kullanılacak. fragment_login.xml ve buradaki değişiklikler yapılmalı.
 
@@ -19,19 +19,18 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
-
-
-
-        val nameEditText = view.findViewById<TextInputEditText>(R.id.editTextEmail)
-        val loginButton = view.findViewById<Button>(R.id.buttonLogin)
-
-        // Şimdilik örnek için butona tıklayınca, ekrana edittext değeri basılıyor.
-        loginButton.setOnClickListener {
-            Toast.makeText(context,nameEditText.text, Toast.LENGTH_SHORT).show()
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        binding.textViewLoginBottom.setOnClickListener {
+            openRegisterFragment()
         }
 
-        return view
+        return binding.root
+    }
+
+
+    fun openRegisterFragment() {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, RegisterFragment())
+            .commit()
     }
 }

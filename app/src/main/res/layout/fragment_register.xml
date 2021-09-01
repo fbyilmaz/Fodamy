@@ -102,14 +102,14 @@
             android:layout_marginTop="@dimen/margin_medium"/>
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView_register_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_medium"
             android:text="@string/screen_register_bottom"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/margin_medium"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

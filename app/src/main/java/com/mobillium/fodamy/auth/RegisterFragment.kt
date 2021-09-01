@@ -17,7 +17,17 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false)
+        binding.textViewRegisterBottom.setOnClickListener {
+            openLoginFragment()
+        }
         return binding.root
+    }
+
+
+    fun openLoginFragment() {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, LoginFragment())
+            .commit()
     }
 
 

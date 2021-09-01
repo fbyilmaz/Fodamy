@@ -14,6 +14,7 @@
     <string name="screen_intro4_title">Share recipes with others.</string>
     <string name="screen_intro4_desc">Fodamy is the best place to find your favorite recipes in all around the word.</string>
     <string name="screen_intro_next">Sıradaki</string>
+    <string name="screen_intro_start">Başla</string>
     <string name="screen_register_title">Üye Ol</string>
     <string name="screen_register_bottom">Hesabın mı var? Giriş Yap</string>
     <string name="screen_login_title">Giriş Yap</string>
@@ -24,5 +25,14 @@
     <string name="screen_register_mail">E-Mail Adresi</string>
     <string name="screen_register_nickname">Kullanıcı Adı</string>
     <string name="screen_register_password">Şifre</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>
