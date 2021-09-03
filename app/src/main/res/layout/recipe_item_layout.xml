@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="recipe"
+            type="com.mobillium.fodamy.network.models.Recipe" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,6 +41,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/constraintLayout_top"
                     app:layout_constraintTop_toTopOf="parent"
+                    imageUrl="@{recipe.user.image.url}"
                     app:round="20dp"
                     app:srcCompat="@drawable/ic_user" />
 
@@ -46,7 +50,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="kullanıcıadı"
+                    android:text="@{recipe.user.username}"
+                    tools:text="username"
                     android:fontFamily="@font/nunito"
                     android:textColor="@color/cinder"
                     android:textStyle="bold"
@@ -61,7 +66,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="4dp"
-                    android:text="3 Tarif 0 Takipçi"
+                    tools:text= "3 Tarif 0 Takipçi"
+                    android:text="@{`Tarif ` + recipe.user.recipeCount + ` Takipçi ` + recipe.user.followingCount}"
                     android:fontFamily="@font/nunito"
                     android:textColor="@color/raven"
                     app:layout_constraintBottom_toBottomOf="@+id/imageViewProfile"
@@ -85,7 +91,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:text="Makarna Tarifi"
+                tools:text="Makarna Tarifi"
+                android:text="@{recipe.title}"
                 android:fontFamily="@font/nunito"
                 android:textColor="@color/cinder"
                 android:textStyle="bold"
@@ -100,7 +107,8 @@
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
                 android:fontFamily="@font/nunito"
-                android:text="Hamur işi"
+                tools:text="Category"
+                android:text="@{recipe.category.name}"
                 android:textColor="@color/raven"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -114,6 +122,7 @@
                 android:layout_marginTop="@dimen/margin_medium"
                 android:layout_marginEnd="16dp"
                 android:scaleType="centerCrop"
+                imageUrl="@{recipe.images.get(0).url}"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -142,7 +151,8 @@
                 android:layout_marginBottom="4dp"
                 android:textColor="@color/raven"
                 android:fontFamily="@font/nunito"
-                android:text="0 Yorum 0 Beğeni"
+                tools:text="0 Yorum 0 Beğeni"
+                android:text="@{`Yorum ` + recipe.commentCount + ` Beğeni ` + recipe.likeCount}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageViewRecipe" />

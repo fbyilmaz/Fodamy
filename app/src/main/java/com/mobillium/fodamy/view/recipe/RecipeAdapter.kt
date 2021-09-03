@@ -3,6 +3,8 @@ package com.mobillium.fodamy.view.recipe
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.contentValuesOf
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mobillium.fodamy.databinding.RecipeItemLayoutBinding
@@ -21,17 +23,7 @@ class RecipeAdapter(private val recipeList: MutableList<Recipe> = mutableListOf(
 
         fun bind(recipe: Recipe) {
             with(binding) {
-                textView9.text = recipe.user.username
-                textView10.text = "${recipe.user.recipeCount} Tarif ${recipe.user.followedCount} Takipçi"
-                textView11.text = recipe.title
-                textView12.text = recipe.category.name
-                textViewComment.text = "${recipe.commentCount} Yorum ${recipe.likeCount} Beğeni"
-
-                with(Glide.with(binding.root)) {
-                    load(recipe.images[0].url).into(imageViewRecipe).clearOnDetach()
-                    load(recipe.user.image?.url).into(imageViewProfile).clearOnDetach()
-                }
-                imageViewFeatured.visibility = if (recipe.isEditorChoice) View.VISIBLE else View.GONE
+                setRecipe(recipe)
             }
         }
     }
@@ -49,6 +41,9 @@ class RecipeAdapter(private val recipeList: MutableList<Recipe> = mutableListOf(
         position: Int
     ) {
         holder.bind(recipeList[position])
+        holder.itemView.setOnClickListener {
+            Toast.makeText(holder.itemView.context, recipeList[position].title, Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int {
