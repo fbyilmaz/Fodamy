@@ -3,9 +3,10 @@ package com.mobillium.fodamy.view.splash
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.mobillium.fodamy.R
-import com.mobillium.fodamy.view.main.MainActivity
+import com.mobillium.fodamy.view.intro.screen.IntroActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,8 +15,8 @@ class SplashActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        Handler().postDelayed({
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this@SplashActivity, IntroActivity::class.java)
             startActivity(intent)
             finish()
         },3000)

@@ -21,7 +21,6 @@ class AuthActivity : AppCompatActivity() {
         Log.d("Fatih","AuthActivity onCreate")
         openLoginFragment()
 
-
     }
 
     // TODO RegisterFragment oluştur. Tasarımını bitir. Binding kullan.

@@ -3,6 +3,7 @@ package com.mobillium.fodamy.view.recipe
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.mobillium.fodamy.R
 import com.mobillium.fodamy.databinding.ActivityRecipesBinding
@@ -28,6 +29,7 @@ class RecipesActivity : AppCompatActivity() {
     }
 
     fun getRecipes() {
+        binding.progressBar.visibility = View.VISIBLE
         val client = ApiClient.getClient().create(FodamyApi::class.java)
         val request = client.getRecipes()
 
@@ -36,6 +38,7 @@ class RecipesActivity : AppCompatActivity() {
                 call: Call<RecipeResponse>,
                 response: Response<RecipeResponse>
             ) {
+                binding.progressBar.visibility = View.GONE
                 val recipes = response.body() as RecipeResponse
                 Log.d("RETROFIT_RESPONSE", recipes.data[0].ingredients)
 
