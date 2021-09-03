@@ -1,15 +1,19 @@
 package com.mobillium.fodamy.network.models
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 
+@Parcelize
 data class User(
     @SerializedName("cover")
-    val cover: Any?,
+    val cover: @RawValue Any?,
     @SerializedName("definition")
     val definition: String?,
     @SerializedName("facebook_url")
-    val facebookUrl: Any?,
+    val facebookUrl: @RawValue Any?,
     @SerializedName("favorites_count")
     val favoritesCount: Int,
     @SerializedName("followed_count")
@@ -21,7 +25,7 @@ data class User(
     @SerializedName("image")
     val image: ImageXX?,
     @SerializedName("instagram_url")
-    val instagramUrl: Any?,
+    val instagramUrl: @RawValue Any?,
     @SerializedName("is_following")
     val isFollowing: Boolean,
     @SerializedName("is_top_user_choice")
@@ -39,9 +43,9 @@ data class User(
     @SerializedName("surname")
     val surname: String?,
     @SerializedName("twitter_url")
-    val twitterUrl: Any?,
+    val twitterUrl: @RawValue Any?,
     @SerializedName("username")
     val username: String,
     @SerializedName("youtube_url")
-    val youtubeUrl: Any?
-)
+    val youtubeUrl: @RawValue Any?
+): Parcelable

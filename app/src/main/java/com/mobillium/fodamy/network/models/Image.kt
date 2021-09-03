@@ -1,8 +1,11 @@
 package com.mobillium.fodamy.network.models
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Image(
     @SerializedName("height")
     val height: Int,
@@ -14,4 +17,4 @@ data class Image(
     val url: String,
     @SerializedName("width")
     val width: Int
-)
+): Parcelable

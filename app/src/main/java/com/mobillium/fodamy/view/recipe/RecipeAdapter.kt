@@ -1,5 +1,6 @@
 package com.mobillium.fodamy.view.recipe
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,9 +18,11 @@ import com.mobillium.fodamy.network.models.Recipe
  */
 
 
-class RecipeAdapter(private val recipeList: MutableList<Recipe> = mutableListOf()): RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
+class RecipeAdapter(private val recipeList: MutableList<Recipe> = mutableListOf()) :
+    RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
-    inner class RecipeViewHolder(private val binding: RecipeItemLayoutBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class RecipeViewHolder(private val binding: RecipeItemLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(recipe: Recipe) {
             with(binding) {
@@ -32,7 +35,8 @@ class RecipeAdapter(private val recipeList: MutableList<Recipe> = mutableListOf(
         parent: ViewGroup,
         viewType: Int
     ): RecipeViewHolder {
-        val binding = RecipeItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            RecipeItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return RecipeViewHolder(binding)
     }
 
@@ -42,11 +46,15 @@ class RecipeAdapter(private val recipeList: MutableList<Recipe> = mutableListOf(
     ) {
         holder.bind(recipeList[position])
         holder.itemView.setOnClickListener {
-            Toast.makeText(holder.itemView.context, recipeList[position].title, Toast.LENGTH_SHORT).show()
+
+            with(holder.itemView.context) {
+                Toast.makeText(this, recipeList[position].title, Toast.LENGTH_SHORT).show()
+                this.startActivity(Intent(this, RecipeDetailsActivity::class.java).putExtra("data", recipeList[position]))
+            }
         }
     }
 
     override fun getItemCount(): Int {
-       return recipeList.size
+        return recipeList.size
     }
 }

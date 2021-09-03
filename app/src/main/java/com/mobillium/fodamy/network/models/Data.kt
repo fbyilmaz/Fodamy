@@ -1,8 +1,12 @@
 package com.mobillium.fodamy.network.models
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 
+@Parcelize
 data class Recipe(
     @SerializedName("category")
     val category: Category,
@@ -41,7 +45,7 @@ data class Recipe(
     @SerializedName("user")
     val user: User,
     @SerializedName("youtube_image")
-    val youtubeImage: Any?,
+    val youtubeImage: @RawValue Any?,
     @SerializedName("youtube_url")
     val youtubeUrl: String
-)
+):Parcelable

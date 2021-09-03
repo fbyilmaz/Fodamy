@@ -1,77 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <variable
+            name="recipe"
+            type="com.mobillium.fodamy.network.models.Recipe" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/margin_medium">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/imageViewRecipe"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/makarna" />
+            android:background="@color/zircon"
+            android:paddingBottom="@dimen/margin_medium">
 
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/imageViewFeatured"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="@dimen/margin_medium"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:background="@color/white"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewRecipe"
-            app:layout_constraintTop_toTopOf="@+id/imageViewRecipe"
-            app:round="20dp"
-            app:srcCompat="@drawable/ic_editors_pick_icon" />
+            <ImageView
+                android:id="@+id/imageViewRecipe"
+                imageUrl="@{recipe.images.get(0).url}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/makarna" />
 
-        <include
-            android:id="@+id/like_comment"
-            layout="@layout/include_likecomment_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageViewRecipe" />
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/imageViewFeatured"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:visibility="@{recipe.editorChoice ? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewRecipe"
+                app:layout_constraintTop_toTopOf="@+id/imageViewRecipe"
+                app:round="20dp"
+                app:srcCompat="@drawable/ic_editors_pick_icon" />
 
-        <include
-            android:id="@+id/inc_profile"
-            layout="@layout/include_profile_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/like_comment" />
+            <include
+                android:id="@+id/like_comment"
+                layout="@layout/include_likecomment_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewRecipe"
+                app:recipe="@{recipe}" />
 
-        <include
-            android:id="@+id/inc_ingredients"
-            layout="@layout/include_ingredients_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/inc_profile" />
+            <include
+                android:id="@+id/inc_profile"
+                layout="@layout/include_profile_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/like_comment"
+                app:user="@{recipe.user}" />
 
-        <include
-            android:id="@+id/inc_howto"
-            layout="@layout/include_howto_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/inc_ingredients" />
+            <include
+                android:id="@+id/inc_ingredients"
+                layout="@layout/include_ingredients_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:ingredients="@{recipe.ingredients}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inc_profile"
+                app:numberOfPerson="@{recipe.numberOfPerson.text}" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <include
+                android:id="@+id/inc_howto"
+                layout="@layout/include_howto_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:howto="@{recipe.directions}"
+                app:time="@{recipe.timeOfRecipe.text}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inc_ingredients" />
 
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
