@@ -1,4 +1,4 @@
-package com.mobillium.fodamy.auth
+package com.mobillium.fodamy.view.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

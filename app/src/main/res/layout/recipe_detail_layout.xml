@@ -1,26 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-
-    <ImageView
-        android:id="@+id/imageView12"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="l"
-        app:srcCompat="@drawable/makarna" />
+        android:paddingBottom="@dimen/margin_medium">
 
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/like_comment"
-        layout="@layout/include_likecomment_layout"
-        app:layout_constraintTop_toBottomOf="@id/imageView12"
-         />
+        <ImageView
+            android:id="@+id/imageViewRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/makarna" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/imageViewFeatured"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@color/white"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewRecipe"
+            app:layout_constraintTop_toTopOf="@+id/imageViewRecipe"
+            app:round="20dp"
+            app:srcCompat="@drawable/ic_editors_pick_icon" />
+
+        <include
+            android:id="@+id/like_comment"
+            layout="@layout/include_likecomment_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewRecipe" />
+
+        <include
+            android:id="@+id/inc_profile"
+            layout="@layout/include_profile_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/like_comment" />
+
+        <include
+            android:id="@+id/inc_ingredients"
+            layout="@layout/include_ingredients_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inc_profile" />
+
+        <include
+            android:id="@+id/inc_howto"
+            layout="@layout/include_howto_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inc_ingredients" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

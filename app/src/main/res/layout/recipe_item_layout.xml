@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout_top"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/constraintLayout_top"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:round="20dp"
+                    app:srcCompat="@drawable/ic_user" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="kullanıcıadı"
+                    android:fontFamily="@font/nunito"
+                    android:textColor="@color/cinder"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="3 Tarif 0 Takipçi"
+                    android:fontFamily="@font/nunito"
+                    android:textColor="@color/raven"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewProfile"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewProfile" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/seperator1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@color/sec_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout_top" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="Makarna Tarifi"
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/cinder"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seperator1" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="91dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/nunito"
+                android:text="Hamur işi"
+                android:textColor="@color/raven"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+
+            <ImageView
+                android:id="@+id/imageViewRecipe"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12"
+                app:srcCompat="@drawable/makarna" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/imageViewFeatured"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:background="@color/white"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewRecipe"
+                app:layout_constraintTop_toTopOf="@+id/imageViewRecipe"
+                app:round="20dp"
+                app:srcCompat="@drawable/ic_editors_pick_icon" />
+
+            <TextView
+                android:id="@+id/textViewComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginBottom="4dp"
+                android:textColor="@color/raven"
+                android:fontFamily="@font/nunito"
+                android:text="0 Yorum 0 Beğeni"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewRecipe" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clContainer" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

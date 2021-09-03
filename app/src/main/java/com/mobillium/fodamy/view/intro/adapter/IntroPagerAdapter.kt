@@ -1,10 +1,10 @@
-package com.mobillium.fodamy.intro.adapter
+package com.mobillium.fodamy.view.intro.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mobillium.fodamy.databinding.ItemIntroLayoutBinding
-import com.mobillium.fodamy.intro.model.IntroModel
+import com.mobillium.fodamy.view.intro.model.IntroModel
 
 
 class IntroPagerAdapter(private val introModelsList: Array<IntroModel> = IntroModel.values()):

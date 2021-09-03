@@ -1,4 +1,4 @@
-package com.mobillium.fodamy.intro.model
+package com.mobillium.fodamy.view.intro.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

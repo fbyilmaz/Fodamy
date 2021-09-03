@@ -1,4 +1,4 @@
-package com.mobillium.fodamy.intro.screen
+package com.mobillium.fodamy.view.intro.screen
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.mobillium.fodamy.R
-import com.mobillium.fodamy.auth.AuthActivity
+import com.mobillium.fodamy.view.auth.AuthActivity
 import com.mobillium.fodamy.databinding.ActivityIntroBinding
-import com.mobillium.fodamy.intro.adapter.IntroPagerAdapter
+import com.mobillium.fodamy.view.intro.adapter.IntroPagerAdapter
 
 // TODO activity_intro.xml dosyasındaki buton, icon gibi tasarımsal öğeler düzenlenecek.
 class IntroActivity : AppCompatActivity() {
